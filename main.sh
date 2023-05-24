@@ -1,5 +1,3 @@
-#! /bin/bash
-set -e
 # Add dependent repositories
 wget -q -O - https://ppa.pika-os.com/key.gpg | sudo apt-key add -
 add-apt-repository https://ppa.pika-os.com
@@ -13,7 +11,7 @@ cd ./dpkg
 
 #for i in ../patches/*.patch; do patch -Np1 -i $i ;done
 
-LOGNAME=root dh_make --createorig -y -l -p dpkg_1.21.21ubuntu99
+#LOGNAME=root dh_make --createorig -y -l -p dpkg_1.21.21ubuntu99
 
 # Get build deps
 ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime

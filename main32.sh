@@ -14,7 +14,7 @@ cd ./dpkg
 
 apt-get install -y pbuilder debootstrap devscripts debhelper sbuild debhelper ubuntu-dev-tools piuparts dh-make
 
-LOGNAME=root dh_make --createorig -y -l -p dpkg_1.21.21ubuntu99
+#LOGNAME=root dh_make --createorig -y -l -p dpkg_1.21.21ubuntu99
 
 # Get build deps
 ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
