@@ -5,12 +5,12 @@ add-apt-repository https://ppa.pika-os.com
 add-apt-repository ppa:pikaos/pika
 add-apt-repository ppa:kubuntu-ppa/backports
 # Clone Upstream
-git clone https://git.dpkg.org/git/dpkg/dpkg.git -b 1.21.21
+#git clone https://git.dpkg.org/git/dpkg/dpkg.git -b 1.21.21
 rm -rf ./dpkg/debian
 cp -rvf ./debian ./dpkg/
 cd ./dpkg
 
-for i in ../patches/*.patch; do patch -Np1 -i $i ;done
+#for i in ../patches/*.patch; do patch -Np1 -i $i ;done
 
 apt-get install -y pbuilder debootstrap devscripts debhelper sbuild debhelper ubuntu-dev-tools piuparts dh-make
 

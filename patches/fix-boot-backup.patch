@@ -1,8 +1,7 @@
-diff --git a/src/main/archives.c b/src/main/archives.c
-index 96079ab1f..f38deee0a 100644
---- a/src/main/archives.c
-+++ b/src/main/archives.c
-@@ -1061,9 +1061,16 @@ tarobject(struct tar_archive *tar, struct tar_entry *ti)
+diff '--color=auto' -ru a/src/main/archives.c b/src/main/archives.c
+--- a/src/main/archives.c	2023-03-02 05:43:19.000000000 +0300
++++ b/src/main/archives.c	2023-05-25 00:18:25.633405577 +0300
+@@ -1063,9 +1063,16 @@
        tarobject_set_se_context(fnamevb.buf, fnametmpvb.buf, stab.st_mode);
      } else {
        debug(dbg_eachfiledetail, "tarobject nondirectory, 'link' backup");
@@ -21,6 +20,3 @@ index 96079ab1f..f38deee0a 100644
 +      }
      }
    }
-
---
-2.20.1
