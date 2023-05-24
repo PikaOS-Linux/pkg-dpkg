@@ -1,0 +1,8 @@
+usr/lib/*/*.la
+sbin/dpkg-fsys-usrunmess
+usr/share/man/de/man8/dpkg-fsys-usrunmess.8
+usr/share/man/fr/man8/dpkg-fsys-usrunmess.8
+usr/share/man/man8/dpkg-fsys-usrunmess.8
+usr/share/man/nl/man8/dpkg-fsys-usrunmess.8
+usr/share/man/pt/man8/dpkg-fsys-usrunmess.8
+usr/share/man/sv/man8/dpkg-fsys-usrunmess.8

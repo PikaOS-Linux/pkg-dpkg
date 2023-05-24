@@ -1,0 +1,26 @@
+diff --git a/src/archives.c b/src/archives.c
+index 96079ab1f..f38deee0a 100644
+--- a/src/archives.c
++++ b/src/archives.c
+@@ -1061,9 +1061,16 @@ tarobject(struct tar_archive *tar, struct tar_entry *ti)
+       tarobject_set_se_context(fnamevb.buf, fnametmpvb.buf, stab.st_mode);
+     } else {
+       debug(dbg_eachfiledetail, "tarobject nondirectory, 'link' backup");
+-      if (link(fnamevb.buf,fnametmpvb.buf))
+-        ohshite(_("unable to make backup link of '%.255s' before installing new version"),
+-                ti->name);
++      if (link(fnamevb.buf,fnametmpvb.buf)) {
++        if (errno == EPERM) {
++          debug(dbg_eachfiledetail, "unable to link, falling back to nonatomic");
++          if (rename(fnamevb.buf,fnametmpvb.buf))
++            ohshite(_("unable to move aside '%.255s' to install new version"),
++                    ti->name);
++        } else
++          ohshite(_("unable to make backup link of '%.255s' before installing new version"),
++                  ti->name);
++      }
+     }
+   }
+
+--
+2.20.1
