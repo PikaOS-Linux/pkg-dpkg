@@ -1,7 +1,7 @@
-diff --git a/src/archives.c b/src/archives.c
+diff --git a/src/main/archives.c b/src/main/archives.c
 index 96079ab1f..f38deee0a 100644
---- a/src/archives.c
-+++ b/src/archives.c
+--- a/src/main/archives.c
++++ b/src/main/archives.c
 @@ -1061,9 +1061,16 @@ tarobject(struct tar_archive *tar, struct tar_entry *ti)
        tarobject_set_se_context(fnamevb.buf, fnametmpvb.buf, stab.st_mode);
      } else {
