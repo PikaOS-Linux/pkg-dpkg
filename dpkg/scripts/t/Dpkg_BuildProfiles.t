@@ -71,6 +71,3 @@ is_deeply([ get_build_profiles() ], [ qw(noudeb nocheck stage1) ],
 set_build_profiles(qw(!noudeb nocheck stage1));
 is_deeply([ get_build_profiles() ], [ qw(nocheck stage1) ],
     'get active build profiles explicitly set');
-
-
-1;
